@@ -1,13 +1,289 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* primary colors*/
+  --clr-galactic-blue: 252 66% 62%;
+  --clr-summer-yellow: 28 89% 67%;
+  --clr-pink: 0 78% 79%;
+  --clr-light-red: 7 77% 66%;
+  --clr-cyan: 172 46% 57%;
+  --clr-dark-purple: 314 45% 23%;
+  --clr-black: 0 0% 1%;
+  --clr-medium-brown: 30 5% 45%;
+  --clr-light-cream: 28 100% 97%;
+
+  /* fonts*/
+  --heading-large: 2.25rem;
+  --heading-medium: 1.625rem;
+  --heading-small: 1.5rem;
+  /* font-families */
+    --ff-sans-serif: 'Plus Jakarta Sans', sans-serif;
+    --transition: all 0.4s linear;
+    --max-width: 1110px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@media (min-width: 768px) {
+  :root {
+      --heading-large: 2.75rem;
+      --heading-medium: 2rem;
+  }
 }
+
+@media (min-width: 1200px) {
+  :root {
+    /* font-sizes */
+    --heading-large: 3.5rem;
+    --heading-medium: 2.5rem;
+    --heading-small: 2rem;
+  }
+}
+
+/*
+/*
+=============== 
+Reset
+===============
+*/
+
+/* Box-Sizing */
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+h1,
+h2,
+h3
+ {
+  font-weight: 700;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 26px;
+  color: hsl(var(--clr-medium-brown));
+
+}
+
+
+
+@media (min-width: 768px) {
+  p {
+    font-size: 1.125rem;
+    line-height: 28px;
+    
+   
+  }
+}
+
+body {
+  font-family: var(--ff-sans-serif);
+  background-color: hsl(var(--clr-light-cream));
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  overflow-x: hidden;
+}
+/* 
+img,
+picture {
+  max-width: 100%;
+  display: block;
+} */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*
+=============== 
+Utility classes
+===============
+*/
+/* 
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+} */
+
+/* .grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+} */
+
+/* .d-block {
+  display: block;
+} */
+/* 
+.grid-container {
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding-bottom: 5rem;
+  height: 100%;
+} */
+
+/* .grid-container p:not([class]) {
+  max-width: 50ch;
+} */
+
+@media (min-width: 1200px) {
+  /* .grid-container {
+    text-align: left;
+    grid-template-columns: 10.5rem 1fr 1fr 10.5rem;
+
+
+  } */
+
+  /* .grid-container--home>*:first-child {
+    grid-column: 2;
+  } */
+
+  /* .grid-container--home>*:last-child {
+    grid-column: 3;
+  } */
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Colors */
+
+.bg-galactic-blue {
+  background-color: hsl(var(--clr-galactic-blue));
+}
+
+.bg-summer-yellow {
+  background-color: hsl(var(--clr-summer-yellow));
+}
+
+.bg-pink {
+  background-color: hsl(var(--clr-pink));
+}
+
+.bg-light-red {
+  background-color: hsl(var(--clr-light-red));
+}
+
+.bg-cyan {
+  background-color: hsl(var(--clr-cyan));
+}
+
+.bg-dark-purple {
+  background-color: hsl(var(--clr-dark-purple));
+}
+
+.bg-black {
+  background-color: hsl(var(--clr-black));
+}
+
+
+.text-dark {
+  color: hsl(var(--clr-medium-brown));
+}
+
+.text-white {
+  color: hsl(var(--clr-light-cream));
+}
+
+/* typography */
+
+.heading-large {
+  font-size: var(--heading-large);
+ 
+}
+
+.heading-medium {
+  font-size: var(--heading-medium);
+ 
+}
+
+.heading-small {
+  font-size: var(--heading-small);
+ 
+}
+
+ .carousel {
+   overflow: hidden;
+   position: relative;
+   
+ }
+
+ .inner {
+   white-space: nowrap;
+   transition: transform 0.3s;
+   margin: 0 auto;
+ }
+
+ .carousel-item {
+  
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   height: 180px;
+   color: white;
+   background: red;
+   border-radius: 20px;
+   width: 270px;
+
+  }
+  
+  ;
+  
+  
+ 
