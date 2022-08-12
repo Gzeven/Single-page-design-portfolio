@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import slides from '../slides';
 import Track from './Track';
 import Controls from './Controls';
+import { useSwipeable } from 'react-swipeable';
 
 const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(2);
@@ -27,12 +28,17 @@ const Slider = () => {
     }
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setSlideIndex(slideIndex + 1),
+    onSwipedRight: () => setSlideIndex(slideIndex - 1),
+  });
+
   return (
     <Wrapper>
       <h1 className="heading-small">My Work</h1>
       <div className="slider">
         <Track {...{ slideIndex }} slideWidth={slideWidth}>
-          <ul>
+          <ul {...handlers}>
             {slides.map((slide, index) => {
               return (
                 <li key={index}>
