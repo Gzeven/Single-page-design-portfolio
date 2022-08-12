@@ -29,8 +29,20 @@ const Slider = () => {
   };
 
   const handlers = useSwipeable({
-    onSwipedLeft: () => setSlideIndex(slideIndex + 1),
-    onSwipedRight: () => setSlideIndex(slideIndex - 1),
+    onSwipedLeft: () => {
+      if (slideIndex < slides.length - 1) {
+        setSlideIndex((prevIndex) => prevIndex + 1);
+      } else {
+        setSlideIndex(0);
+      }
+    },
+    onSwipedRight: () => {
+      if (slideIndex > 0) {
+        setSlideIndex((prevIndex) => prevIndex - 1);
+      } else {
+        setSlideIndex(slides.length - 1);
+      }
+    },
   });
 
   return (
