@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import slides from '../slides';
 import Track from './Track';
@@ -9,8 +9,6 @@ const Slider = () => {
   const [slideIndex, setSlideIndex] = useState(2);
 
   const slideWidth = window.innerWidth <= 1024 ? 72 : 37.5;
-  // const slideWidth = 72;
-  // useEffect(() => {}, [slideWidth]);
 
   const onPrev = () => {
     if (slideIndex > 0) {
@@ -70,8 +68,7 @@ const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
   width: 100vw;
-  /* max-width: 1440px;
-  margin: 0 auto; */
+
   h1 {
     text-align: center;
     margin-bottom: 2rem;
@@ -84,7 +81,6 @@ const Wrapper = styled.div`
     position: relative;
     transition: transform3d 2s;
     transform: translate3d(${(100 - 72) / 2}vw, 0, 0);
-    /* max-width: 1440px; */
 
     li {
       min-width: 72vw;
@@ -95,8 +91,6 @@ const Wrapper = styled.div`
         border-radius: 10px;
         width: 100%;
         height: 100%;
-        /* https: ; //www.youtube.com/watch?v=2n1VO_BIQRU */
-        /* https: ; //dev.to/rakumairu/simple-react-carousel-24m */
       }
     }
   }
@@ -108,8 +102,6 @@ const Wrapper = styled.div`
   }
 
   @media (min-width: 1040px) {
-    /* max-width: 1440px;
-    margin: 0 auto; */
     ul {
       transform: translate3d(${(100 - 37.5) / 2}vw, 0, 0);
 
@@ -118,21 +110,6 @@ const Wrapper = styled.div`
         max-width: 37.5vw;
       }
     }
-  }
-
-  @media (min-width: 1440px) {
-    /* margin: 0 auto;
-    width: 1440px;
-
-    ul {
-      transform: translate3d(540px, 0, 0);
-      width: 100%;
-
-      li {
-        min-width: 540px;
-        max-width: 540px;
-      }
-    } */
   }
 `;
 

@@ -110,12 +110,6 @@ body {
   grid-template-rows: min-content 1fr;
   overflow-x: hidden;
 }
-/* 
-img,
-picture {
-  max-width: 100%;
-  display: block;
-} */
 
 input,
 button,

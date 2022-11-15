@@ -2,14 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { Button } from './Button';
-import {
-  textSlideLeftAnimate,
-  textSlideRightAnimate,
-  textSlideUpAnimate,
-  textSlideDownAnimate,
-  textPopUpAnimate,
-  imageAnimate,
-} from '../utils/variants';
+import { textSlideRightAnimate } from '../utils/variants';
 
 const BookMe = () => {
   return (
