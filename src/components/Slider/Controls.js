@@ -41,9 +41,12 @@ const Wrapper = styled.div`
     border: none;
     transition: all ease 0.6s;
     cursor: pointer;
-    :hover {
-      background-color: hsl(var(--clr-galactic-blue));
+    @media (hover: hover) and (pointer: fine) {
+      :hover {
+        background-color: hsl(var(--clr-galactic-blue));
+      }
     }
+
     img {
       margin: 0 auto;
     }

@@ -12,8 +12,10 @@ export const Button = styled.button`
   border: none;
   outline: none;
   transition: all 0.6s;
-  &:hover {
-    background-color: ${(props) => props.hovercolor};
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: ${(props) => props.hovercolor};
+    }
   }
 
   @media (min-width: 768px) {
