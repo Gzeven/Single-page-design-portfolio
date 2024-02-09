@@ -17,10 +17,10 @@ const Controls = (props) => {
 
   return (
     <Wrapper {...props}>
-      <button onClick={props.prev}>
+      <button onClick={props.prev} aria-label="Previous">
         <img src={ArrowLeft} alt="" />
       </button>
-      <button onClick={props.next}>
+      <button onClick={props.next} aria-label="Next">
         <img src={ArrowRight} alt="" />
       </button>
     </Wrapper>

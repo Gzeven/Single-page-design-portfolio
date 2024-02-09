@@ -22,27 +22,27 @@ const Intro = () => {
       <div className="container">
         <div className="graphic-design grid-item">
           <img src={GraphicDesign} alt="" />
-          <h4>Graphic Design</h4>
+          <h2>Graphic Design</h2>
         </div>
         <div className="ui-ux grid-item">
           <img src={UIUX} alt="" />
-          <h4>UI/UX</h4>
+          <h2>UI/UX</h2>
         </div>
         <div className="apps grid-item">
           <img src={Apps} alt="" />
-          <h4>Apps</h4>
+          <h2>Apps</h2>
         </div>
         <div className="illustrations grid-item">
           <img src={Illustrations} alt="" />
-          <h4>Ilustrations</h4>
+          <h2>Ilustrations</h2>
         </div>
         <div className="photography grid-item">
           <img src={Photography} alt="" />
-          <h4>Photography</h4>
+          <h2>Photography</h2>
         </div>
         <div className="motion-graphics grid-item">
           <img src={MotionGraphics} alt="" />
-          <h4>Motion Graphics</h4>
+          <h2>Motion Graphics</h2>
         </div>
       </div>
     </Wrapper>
@@ -76,7 +76,7 @@ const Wrapper = styled.section`
       'illustrations illustrations'
       'photography photography'
       'motion-graphics motion-graphics';
-    h4 {
+    h2 {
       color: hsl(var(--clr-light-cream));
       font-size: 1.5rem;
       margin-bottom: 0;
